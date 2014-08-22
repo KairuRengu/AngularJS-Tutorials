@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<div ng-app="" ng-init="person={firstName:'Kyle',lastName:'Leng',level:20, strength:30,
+									agility:10, vitality:50, intelligence:37}">
+	<p>My name is <span ng-bind="person.firstName"></span>.I have a level of 
+		<span ng-bind="person.level"></span> with a strength of 
+		<span ng-bind="person.strength"></span> with an agility and vitality of
+		<span ng-bind="person.agility + ', ' + person.vitality"></span>.</p>
+	
+	</div>
+<script src="js/angular.js"></script>
+</body>
+</html>
