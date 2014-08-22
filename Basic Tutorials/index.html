@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="customersApp">
+<head>
+	<title>AngularJs App</title>
+	
+</head>
+<body ng-init="customers=['Ted','Tim','Michelle','Kyle']">
+	<h1> My title</h1>
+	<div ng-controller="CustomersController">
+		Search: <input type ="text" ng-model="searchText"/>
+		{{ searchText }}
+		<br/>
+		<h3>Customers:</h3>
+		<table>
+			<tr ng-repeat="customer in customers | filter:searchText">
+				<td>{{ customer.name}}</td>
+				<td>{{ customer.total | currency }}</td>
+				<td>{{ customer.id}}</td>
+			</tr>
+		</table>
+	</div>
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/angular-animation.js"></script>
+	<script>
+		var app = angular.module('customersApp',[]);
+		app.controller('CustomersController', function($scope) {
+			$scope.customers = [
+				{"id": 1, "name": "Ted", "total": 5.996},
+				{"id": 2, "name": "Michelle", "total": 10.996},
+				{"id": 3, "name": "Zed", "total": 10.6363},
+				{"id": 4, "name": "Kyle", "total": 13.65454}];
+		});
+	</script>
+</body>
+</html>
