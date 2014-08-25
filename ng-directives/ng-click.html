@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<div ng-app="" ng-controller="myController">
+		<button ng-click="count = count + 1">Click me!</button>
+		<p>{{ count }}</p>
+	</div>
+<script>
+	function myController($scope) {
+		$scope.count = 0;
+	}
+</script>
+<script src="js/angular.js"></script>
+<body>
+</html>
