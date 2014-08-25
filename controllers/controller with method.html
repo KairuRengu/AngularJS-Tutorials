@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<div ng-app="" ng-controller="personController">
+	First Name: <input type="text" ng-model="person.firstName"><br>
+	Last Name: <input type="text" ng-model="person.lastName"><br>
+	<br>
+	{{greeting()}} <br>
+	Full Name: {{person.firstName + " " + person.lastName}}
+	</div>
+	<script>
+	function personController($scope) {
+		$scope.person = {
+			firstName: "John",
+			lastName: "Doe",
+
+			};
+		$scope.greeting= function(){
+			var user;
+			user= $scope.person;
+			return "Hello " + user.firstName + " " + user.lastName;
+			};	
+	}
+	</script>
+	<script src="js/angular.js"></script>
+</body>
+</html>
