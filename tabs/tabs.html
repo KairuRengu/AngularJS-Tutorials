@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="app">
+	<head>
+		<script src="js/angular.js"></script>
+		<script src="components.js"></script>
+		<script src="app.js"></script>
+		<link rel="stylesheet" href="bootstrap.css">
+	</head>
+	<body>
+		<tabs>
+			<pane title="Localization">
+				Date:{{ '2014-08-26' | date:'fullDate'}} <br>
+				Currency: {{ 123456|currency }} <br>
+				Number: {{ 987654.43210|number }} <br>
+			</pane>
+			<pane title="Pluralization">
+				<div ng-controller="beerCounter">
+					<div ng-repeat="beerCount in BeerCounter">
+						<ng-pluralize count="beerCount" when="beerForms"></ng-pluralize>
+					<div>
+				</div>
+			</pane>
+		</tabs>
+
+		
+	</body>
+</html>
